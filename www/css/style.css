@@ -1,0 +1,138 @@
+/* Empty. Add your own CSS if you like */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input,
+textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer,
+header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	font-family: Arial;
+}
+
+.bar.bar-royal .title {
+	font-weight: bold;
+}
+.slider-pager .slider-pager-page{
+	color: #ddd;
+}
+ion-slide img {
+	width: 100%;
+}
+
+.core .row div {
+	border: 5px solid white;
+	color: white;
+	font-size: 18px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.core .row div i {
+	margin-top: 5px;
+	font-size: 40px;
+}
+
+.recommend h3{
+	// margin: 0 10px;
+	border-top: 1px solid #ccc;
+	font-size: 16px;
+	line-height: 36px;
+	margin-top:10px;
+	padding: 5px 10px;
+	padding-bottom: 0;
+	font-weight: bold;
+	font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+}
+.recommend img{
+	width:100%;
+}
+.recommend img+p{
+	font: normal 14px/18px Arial, "Lucida Grande", Verdana, "Microsoft YaHei", hei;
+    height: 36px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2
+}
+.recommend p span{
+	font-size: 14px;
+	color: #ff7d13;
+}
+.recommend p strong{
+	font-size: 16px;
+	color: #ff7d13;
+}
+.recommend p em{
+	font-size: 12px;
+	color: #ff7d13;
+}
+.tab-item .badge {
+	padding: 1px;
+	width: 18px; 
+	height: 18px;
+}
+.nav-bar-block ion-header-bar{
+  background-color: inherit !important;
+  border-color: inherit !important;
+}
+.side-bottom{
+	border-top: 1px solid #eee;
+	margin-top: 80px;
+	padding:12px;
+}
+.side-bottom a{
+	display: block;
+	text-decoration: none;
+	margin-bottom: 30px;
+	margin-top: 10px;
+	color: black;
+}
+.side-bottom p{
+	margin-bottom: 0;
+}
+@-webkit-keyframes shake /* Safari 和 Chrome */
+{
+0%   {-webkit-transform: rotate(-5deg);}
+50%  {-webkit-transform: rotate(5deg);}
+100%  {-webkit-transform: rotate(-5deg);}
+}
+.action-sheet-wrapper{
+	bottom: 60%;
+	width: 40%;
+    height: 0;
+}
+.action-sheet-up{
+	bottom: 40%;
+	width: 80%;
+	height: 20%;
+}
+.chats-list .item-content{
+	background-color:inherit;
+}
+.action-sheet-backdrop.active {
+    background-color: rgba(0, 0, 0, 0.5)!important;
+}
+.action-sheet .button{
+	padding-left: 15px!important;
+}
+.action-sheet-group .button{
+	border-top: solid 1px #d1d3d6!important;
+}
+.action-sheet-group .button:first-child{
+	border-top: 0!important;
+}
+// .action-sheet-group .action-sheet-title{
+// 	font-size: 16px!important;
+// 	color: #17C820!important;
+// 	border-radius: 5px!important;
+// }
+.action-sheet-group .action-sheet-destructive{
+	color: red!important;
+}
+.chats-list a.item-content{
+	overflow: visible!important;
+}

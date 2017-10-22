@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+  <!-- ionic/angularjs js -->
+  <script src="./jquery.js"></script>
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ionic/js/angular/ng-cordova.js"></script>
+  <script src="lib/ionic/js/hammerjs/hammer.min.js"></script>
+  <script src="lib/ionic/js/angular-gestures/gestures.min.js"></script>
+  <script src="lib/ionic/js/angular-touch/angular-touch.min.js"></script>
+  <script src="lib/ionic/js/angular-touch/angular-touch-bases.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
+</head>
+
+<body ng-app="starter">
+  <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+  <ion-side-menus>
+    <ion-side-menu-content drag-content="false">
+      <ion-nav-bar class="bar bar-{{theme}}">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+      </ion-nav-bar>
+      <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+      <ion-nav-view></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu ng-controller="sideMenu" is-enabled="true" side="left" width="240" expose-aside-when="(min-width:500px)">
+      <script id="my-modal.html" type="text/ng-template">
+        <ion-modal-view>
+          <ion-header-bar class="bar-positive">
+            <a class="button" ng-click="closeModal();">返回</a>
+            <h1 class="title">欢迎回到知乎!</h1>
+          </ion-header-bar>
+          <ion-content>
+            <div class="padding">
+                <div class="list">
+                    <label style="position: relative;" class="item item-input">
+                        <span class="input-label">账号：</span>
+                        <input ng-model="newUser.account" type="text">
+                        <img style="position: absolute; right: 10px; top:10px" src="img/error.png" ng-show="newUser.account!=='' && newUser.account!=='wty'">
+                        <img style="position: absolute; right: 10px; top:10px" src="img/right.png" ng-show="newUser.account=='wty'">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">密码：</span>
+                        <input ng-model="newUser.password" type="password">
+                        <img style="position: absolute; right: 10px; top:10px" src="img/error.png" ng-show="newUser.password!=='' && newUser.password!=='123456'">
+                        <img style="position: absolute; right: 10px; top:10px" src="img/right.png" ng-show="newUser.password=='123456'">
+                    </label>
+                    <label  class="item item-input">
+                        <span style="width:20%" class="input-label">验证码：</span>
+                        <img style="margin-right:20px;" src="img/validate.png">
+                        <input ng-model="newUser.validate" type="text">
+                        <img style="position: absolute; right: 10px; top:10px" src="img/error.png" ng-show="newUser.validate!=='' && newUser.validate!=='g8pk'">
+                        <img style="position: absolute; right: 10px; top:10px" src="img/right.png" ng-show="newUser.validate=='g8pk'">
+                    </label>
+                    <button class="button button-full button-positive" ng-click="login()">登录</button>
+                </div>
+            </div>
+          </ion-content>
+        </ion-modal-view>
+      </script>
+      <ion-header-bar class="bar bar-positive">
+        <a menu-close="" class="button button-clear icon ion-arrow-left-c"></a>
+        <h1 class="title" style="font-weight: 600">知乎</h1>
+        <a class="button button-clear" ng-click="showConfirm();" ng-show="isLogin">注销</a>
+      </ion-header-bar>
+      <ion-content>
+        <div style="margin:0; border-bottom:1px solid #eee" class="list list-borderless">
+          <a style="position: relative; display: flex; align-items: center;" class="item item-avatar-left">
+            <img style="border-radius:0; width: 65px; height: 65px;" ng-src={{avatar}} ng-show="isLogin" ng-click="changeAvat(event)">
+            <h2 style="font-weight: 500" ng-show="isLogin">魏天尧</h2>
+            <img style="position: absolute;left:2px;" ng-src="img/notlogin1.png" ng-show="!isLogin" ng-click="openModal();">
+            <img style="position: absolute;left:60px;top:23px" ng-src="img/notlogin2.png" ng-show="!isLogin" ng-click="openModal();">
+          </a>
+        </div>
+        <div style="margin-top: 10px;" class="list list-borderless" ng-show="isLogin">
+          <a style="display:block" ng-href="#/tab/home" menu-toggle="left" class="item item-icon-left">
+            <i class="positive icon ion-ios-home-outline"></i>
+            <h2 style="font-weight: 500">首页</h2>
+          </a>
+          <a style="display:block" ng-href="#/tab/dash" menu-toggle="left" class="item item-icon-left">
+            <i class="calm icon ion-ios-pulse"></i>
+            <h2 style="font-weight: 500">状态</h2>
+          </a>
+          <a style="display:block" ng-href="#/tab/chats" menu-toggle="left" class="item item-icon-left">
+            <i class="balanced icon ion-ios-chatboxes-outline"></i>
+            <h2 style="font-weight: 500">微信</h2>
+          </a>
+          <a style="display:block" ng-href="#/tab/account" menu-toggle="left" class="item item-icon-left">
+            <i class="energized icon ion-ios-gear-outline"></i>
+            <h2 style="font-weight: 500">设置</h2>
+          </a>
+          <a style="display:block" class="item item-icon-left">
+            <i class="assertive icon ion-android-attach"></i>
+            <h2 style="font-weight: 500">收藏</h2>
+          </a>
+          <a style="display:block" class="item item-icon-left">
+            <i class="royal icon ion-share"></i>
+            <h2 style="font-weight: 500">转发</h2>
+          </a>
+        </div>
+        <div class="side-bottom" ng-show="isLogin">
+          <a>设置</a>
+          <p class={{theme}} ng-click="changeTheme(theme)">切换主题</p>
+        </div>
+      </ion-content>
+    </ion-side-menu>
+  </ion-side-menus>
+  <!-- 登录界面设置 -->
+</body>
+
+</html>

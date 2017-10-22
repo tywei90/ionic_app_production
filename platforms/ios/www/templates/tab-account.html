@@ -1,0 +1,21 @@
+<ion-view view-title="设置" on-swipe-right="switchLeft()">
+    <ion-content style="background: #eee;">
+        <ion-list>
+            <div class="item item-divider">消息通知</div>
+            <ion-toggle toggle-class="toggle-balanced" ng-repeat="item in items" ng-model="item.selected">{{item.text}}</ion-toggle>
+            <ion-toggle toggle-class="toggle-balanced" ng-model="value1" ng-init="value1=false" ng-click="play(value1);">声音</ion-toggle>
+            <ion-toggle toggle-class="toggle-balanced" ng-model="value2" ng-init="value2=false" ng-click="vibrate(value2);">震动</ion-toggle>
+        </ion-list>
+        <ion-list>
+            <div class="item item-divider">
+                <span style="line-height: 30px;margin-right: 15px;">请选择您已经学过的前端知识？</span>
+                <button style="margin-right: 10px;" class="button button-small button-calm" ng-click="chooseAll()">全选</button>
+                <button class="button button-small button-calm" ng-click="reverseChoose()">反选</button>
+            </div>
+            <ion-checkbox class="checkbox-calm" ng-repeat="banner in banners" ng-model="banner.selected">
+                {{banner.label}}
+            </ion-checkbox>
+        </ion-list>
+        <a style="margin-top: 0;" class="button button-block button-calm" ng-click="showResult();">确定</a>
+    </ion-content>
+</ion-view>
