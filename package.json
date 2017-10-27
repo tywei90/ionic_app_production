@@ -3,6 +3,10 @@
   "version": "1.1.1",
   "author": "魏天尧",
   "description": "myproject: An Ionic project",
+  "scripts": {
+    "stop": "port 8100|kill -9 `awk '{print substr($7,0,5)}'`",
+    "server": "screen -d -m -L ionic serve --nolivereload --nobrowser",
+  },
   "dependencies": {
     "cordova-ios": "^4.4.0",
     "gulp": "^3.5.6",
