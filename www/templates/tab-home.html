@@ -26,8 +26,8 @@
       </div>
       <div class="row" style="height: 100px;">
         <div ng-init="x=0" style="-webkit-animation: {{x}};" ng-touchstart="x='shake 0.1s infinite alternate'" ng-touchend="x=''" ng-click="openURL('http://m.ctrip.com/webapp/tour/vacations?from=ctrip_home')" class="col balanced-bg">旅游<i class="icon ion-image"></i></div>
-        <div ng-init="y=0" style="-webkit-animation: shake {{y}}s infinite alternate;" ng-touchstart="y=0.1" ng-touchend="y=0" ng-click="openURL('http://m.ctrip.com/webapp/ticket/index')" class="col energized-bg">景点门票<i class="icon ion-pricetag"></i></div>
-        <div ng-init="z=0" style="-webkit-animation: shake {{z}}s infinite alternate;" ng-touchstart="z=0.1" ng-touchend="z=0" ng-click="openURL('http://m.ctrip.com/html5/you/')" class="col royal-bg">攻略社区<i class="icon ion-person-stalker"></i></div>
+        <div ng-init="y=0" style="-webkit-animation: {{y}};" ng-touchstart="y='shake 0.1s infinite alternate'" ng-touchend="y=''" ng-click="openURL('http://m.ctrip.com/webapp/ticket/index')" class="col energized-bg">景点门票<i class="icon ion-pricetag"></i></div>
+        <div ng-init="z=0" style="-webkit-animation: {{z}};" ng-touchstart="z='shake 0.1s infinite alternate'" ng-touchend="z=''" ng-click="openURL('http://m.ctrip.com/html5/you/')" class="col royal-bg">攻略社区<i class="icon ion-person-stalker"></i></div>
       </div>
     </div>
     <div class="recommend" on-swipe-left="switchRight()">
