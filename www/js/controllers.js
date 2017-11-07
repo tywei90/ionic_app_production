@@ -172,7 +172,7 @@ angular.module('starter.controllers', [])
   });
   $scope.login = function() {
     // console.log($scope.newUser.account);
-    if ($scope.newUser.account == "wty" && $scope.newUser.password == "123456" && $scope.newUser.validate == "g8pk") {
+    if ($scope.newUser.account == "ionic" && $scope.newUser.password == "123456" && $scope.newUser.validate == "g8pk") {
       $scope.isLogin = true;
       $scope.modal.hide();
       $ionicSideMenuDelegate.toggleLeft(true);
