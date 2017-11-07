@@ -14,9 +14,9 @@ angular.module('starter.services', [])
     priority:0,
   }, {
     id: 1,
-    name: '李君',
-    lastText: '恩恩，晚安了，君上！',
-    face: 'img/lijun.png',
+    name: '邓俊海',
+    lastText: '拜了个拜，下次聊~',
+    face: 'img/dengjh.png',
     num:8,
     state:"none",
     bgColor: 'fff',
