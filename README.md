@@ -1,8 +1,8 @@
-# [基于ionic的混合APP实战](https://ionic.wty90.com/)
+# 基于ionic的混合APP实战
 
 技术分析，详见我的[博客](https://www.wty90.com/2018/01/16/ionic-app/)
 
-## 使用步骤如下：
+**使用步骤如下：**
 
 0. 克隆仓库到本地
 
