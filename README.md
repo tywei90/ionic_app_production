@@ -1,8 +1,26 @@
 # 基于ionic的混合APP实战
 
-技术分析，详见我的[博客](https://www.wty90.com/2018/01/16/ionic-app/)
+> 技术分析，详见我的[博客](https://www.wty90.com/2018/01/16/ionic-app/)
 
-**使用步骤如下：**
+## 一、工程目录分析
+
+platforms是build之后生成的android和ios模拟器文件夹。
+
+resources是app在手机上的图标和开机画面等适配图。
+
+www是前端的工程目录，index.html是入口文件
+
+**js文件夹**
+
+* app.js是app的系统配置和负责tab路由切换；
+
+* controllers.js是主要的逻辑模块
+
+* services.js负责模块间通信的
+
+templates文件夹放置了所有tab的模板，用了很多ionic提供的组件，开发很方便
+
+## 二、项目运行
 
 1. 克隆仓库到本地
 
