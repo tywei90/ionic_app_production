@@ -4,7 +4,7 @@
   "author": "魏天尧",
   "description": "myproject: An Ionic project",
   "scripts": {
-    "server": "screen -d -m -L ionic serve --no-livereload --no-open"
+    "server": "screen -d -m -L ionic serve --no-livereload --no-open --no-interactive"
   },
   "dependencies": {
     "cordova-ios": "^4.4.0",
