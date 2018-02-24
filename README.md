@@ -39,4 +39,4 @@ templates文件夹放置了所有tab的模板，用了很多ionic提供的组件
 6. 模拟：ionic cordova emulate android/ios
 
 ## 注意
-侧边栏页的登录信息，账号：ionic，密码：123456。可以在www -> js -> controllers.js里面修改。
+侧边栏页的登录信息，账号：wty，密码：123456。可以在www -> js -> controllers.js里面修改。
