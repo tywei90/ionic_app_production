@@ -10,5 +10,11 @@ node_modules
 # npm报错日志
 npm-debug.log
 
-# 发布输出目录
-tmp
+# ionic日志
+ionic.log
+
+# screen
+screenlog.0
+
+# 其他
+nohup.out
